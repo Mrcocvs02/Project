@@ -2,8 +2,8 @@
 
 float vettore::get_x() const { return x; };
 float vettore::get_y() const { return y; };
-void vettore::set_x(float x_) { x = x_; };
-void vettore::set_y(float y_) { y = y_; };
+void vettore::set_x(float const x_) { x = x_; };
+void vettore::set_y(float const y_) { y = y_; };
 vettore vettore::operator+(vettore const& b) const {
   return {(x + b.get_x()), (y + b.get_y())};
 };
@@ -23,6 +23,7 @@ void vettore::print() const {
 float scalar_prod(vettore const& a, vettore const& b) {
   return a.get_x() * b.get_x() + a.get_y() * b.get_y();
 };
-float angle_between_vectors(vettore const& a, vettore const& b) {
+float angle
+(vettore const& a, vettore const& b) {
   return acos(scalar_prod(a, b) / (a.norm() * b.norm()));
 };

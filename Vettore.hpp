@@ -13,9 +13,9 @@ class vettore {
   vettore(float x_, float y_) : x{x_}, y{y_} {}
 
   float get_x() const;
-  void set_x(float x_);
+  void set_x(float const x_);
   float get_y() const;
-  void set_y(float x_);
+  void set_y(float const y_);
 
   vettore operator+(vettore const& b) const;
   vettore operator-(vettore const& b) const;
@@ -26,6 +26,6 @@ class vettore {
 };
 
 float scalar_prod(vettore const& a, vettore const& b);
-float angle_between_vectors(vettore const& a, vettore const& b);
+float angle(vettore const& a, vettore const& b);
 
 #endif
