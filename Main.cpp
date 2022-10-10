@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Graphic.hpp"
 
-
 int main(){
+    srand (time(NULL));
      int n;
   std::cout << "insert the number of birds you want in the flock" << '\n';
   std::cin >> n;
@@ -20,11 +20,11 @@ int main(){
               << "A = start predator movement" << '\n'
               << "left-right-up-down = move the predator" << '\n'
               << "esc = close the simulation" << '\n';
-    Game game(10., 0.5, 0.05, 0.01,n);
-    game.run();
-
-}
-if (condition == 115) {
+    sf::RenderWindow window(sf::VideoMode(1200, 650), "Simulation");
+    Game game(10., 0.5, 0.05, 0.01, n);
+    game.Run(&window);
+  }
+  if (condition == 115) {
     std::cout << "insert separation distance" << '\n';
     float d;
     std::cin >> d;
@@ -45,7 +45,9 @@ if (condition == 115) {
               << "esc = close the simulation" << '\n'
               << '\n'
               << "insert any key to start the simulation" << '\n';
+     sf::RenderWindow window(sf::VideoMode(1200,650),
+                          "Simulation");
      Game game(d, s, a, c,n);
-     game.run();
-}
+     game.Run(&window);
+  }
 }

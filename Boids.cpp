@@ -14,9 +14,9 @@ inline void Boid::Set_Predator_Check(bool c) {}
 inline bool Boid::Get_Predator_Check() { return Predator_Check; }
 void Boid::Wall_Hit() {
   if ((Position.get_x() <= 25) || (Position.get_x() >= 1175)) {
-    Velocity.set_x(1.5 * Velocity.get_x());
+    Velocity.set_x(-1.2 * Velocity.get_x());
   }
   if ((Position.get_y() <= 25) || (Position.get_y() >= 625)) {
-    Velocity.set_y(1.5 * Velocity.get_y());
+    Velocity.set_y(-1.2 * Velocity.get_y());
   }
 }

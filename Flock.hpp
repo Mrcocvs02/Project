@@ -1,5 +1,7 @@
 #include <numeric>
 #include <vector>
+#include <random>
+#include <chrono>
 
 #include "Boids.hpp"
 #include "Vettore.hpp"
@@ -13,31 +15,35 @@ class Flock {
   float a;
   float c;
   int n;
-  std::vector<Boid> flock_;
-  Boid predator;
+  std::vector<Boid> Flock_;
+  Boid Predator;
+std::vector<vettore> Obstacles;
 
  public:
   Flock(float d_, float s_, float a_, float c_, int n_);
 
-  std::vector<Boid> get_flock() { return flock_; };
-  Boid get_predator() { return predator; };
-  void set_predator(Boid const& a) { predator = a; };
+  std::vector<Boid> get_flock() { return Flock_; };
+  Boid get_predator() { return Predator; };
+  void set_predator(Boid const& a) { Predator = a; };
+  
+  std::vector<vettore> Get_Obstacles(){return Obstacles;};
 
-  vettore medium_velocity();
-  float sdv_medium_velocity();
-  vettore center_of_mass();
-  float sdv_center_of_mass();
+  vettore Medium_Velocity();
+  float Sdv_Medium_Velocity();
+  vettore Center_Of_Mass();
+  float Sdv_Center_Of_Mass();
 
-  vettore v_separation_i(int j);
-  vettore v_allignement1_i(int j);
-  vettore v_cohesion_i(int j);
-  vettore predator_repulsion(int j);
+  vettore V_Separation_i(int i);
+  vettore V_Allignement1_i(int i);
+  vettore V_Cohesion_i(int i);
+  vettore Predator_Repulsion(int i);
+  vettore Obstacles_Repulsion(int i);
 
-  std::vector<int> boids_seen(int j);
-  void rules(int j);
-  void set_velocities(int j);
+  std::vector<int> Boids_Seen(int i);
+  void Rules(int i);
+  void Set_Velocity(int i);
 
-  void predator_simulation();
-  void simulation(bool p_check);
+  void Predator_Simulation();
+  void Simulation(bool p_check);
 };
 #endif
