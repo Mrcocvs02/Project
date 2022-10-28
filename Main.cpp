@@ -9,22 +9,15 @@ int main(){
     while (n <= 0 || n > 1000)
   { // Controlla che il numero inserito sia valido e in caso contrario dà il relativo messaggio di errore
     if (n > 1000)
-    {
-      std::cout << "Do you want to hurt your pc? If you care about it reduce the number of boids otherwise you will overload it. Please re-enter the number of boids you would like to see in the flock (possibly a valid one this time): ";
-      std::cin >> n;
-    }
-    else
-    {
+    { std::cout << "Do you want to hurt your pc? If you care about it reduce the number of boids otherwise you will overload it. Please re-enter the number of boids you would like to see in the flock (possibly a valid one this time): ";
+      std::cin >> n;}
+    else{
       if (n == 0)
-      {
-        std::cout << "I can assure you that a flock with zero boids isn't very fun to watch... Please re-enter the number of boids you would like to see in the flock (possibly a valid one this time): ";
-        std::cin >> n;
-      }
-      else
-      {
+      { std::cout << "I can assure you that a flock with zero boids isn't very fun to watch... Please re-enter the number of boids you would like to see in the flock (possibly a valid one this time): ";
+        std::cin >> n;}
+      else{
         std::cout << "Have you ever seen a flock with a NEGATIVE number of boids? Please re-enter the number of boids you would like to see in the flock (possibly a valid one this time): ";
-        std::cin >> n;
-      }
+        std::cin >> n;}
     }
   }
   std::cout << "press d to use default parameters," << '\n'
